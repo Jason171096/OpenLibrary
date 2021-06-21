@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { Search } from './Search'
+import { Library } from './Library'
 import request from '../request/request'
 
 export const Body = () => {
@@ -10,15 +11,14 @@ export const Body = () => {
 
     const getServer = (nameTitle) => {
         axios.get(request.SEARCH.url + nameTitle)
-            .then(requery => { console.log(requery.data)/*resquest.map((res) => setArray(res))*/ })
+            .then(requery => { setArray(requery.data) })
             .catch(e => { console.log(e) })
     }
-
-
 
     return (
         <div className="w-full h-screen bg-gray-500 flex flex-col items-center">
             <Search searchBookbyTitle={getServer} />
+            <Library />
         </div>
     )
 }
