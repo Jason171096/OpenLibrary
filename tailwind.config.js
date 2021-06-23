@@ -20,8 +20,12 @@ module.exports = {
       red: colors.rose,
       yellow: colors.amber,
       brown: {
-        brown: '#433333'
+        brown: '#433333',
+        white: '#645454'
        },
+     },
+     fontFamily: {
+       body: ['Ruluko']
      }
   },
   variants: {
