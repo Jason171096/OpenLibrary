@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import request from 'request/request'
+
+import request from './request/request'
 
 function App() {
 
@@ -22,19 +23,23 @@ function App() {
         return (
             array.length !== 0 ? (<div>
                 {array.data.items.map((data) => (
-                    <div className="" key={data.id}>
+                    <div className="flex w-full h-[200px] items-center justify-center text-center bg-brown-brown text-white rounded mb-[30px] text-sm" key={data.id}>
+                      <img className="rounded-sm m-[5px]" src={data.volumeInfo.imageLinks.thumbnail}/>
+                      <div className="flex-col m-[5px]">
                         <h3>{data.volumeInfo.title}</h3>
-                        <p>{" " + data.volumeInfo.authors+ " "}<span>{data.volumeInfo.publishedDate}</span></p>
-                        <img src={data.volumeInfo.imageLinks.thumbnail}/>
+                        <p>{data.volumeInfo.authors + " "}<span>{data.volumeInfo.publishedDate}</span></p>
+                      </div>
                     </div>))}
-            </div>) : (<div>No hay nada que mostrar</div>)
+            </div>) : (<div className="w-full h-8 text-center text-white bg-brown-white rounded">
+              <h3 className="mt-1">Sin resultados de busqueda</h3> 
+            </div>)
         );
     }
 
   const [nameTitle, setNameTitle] = useState('')
 
   const updateNameTitle = (e) => setNameTitle(e.target.value)
-  
+
   return (
     <div className="w-full h-screen">
             <div className="bg-header-image bg-no-repeat bg-center bg-cover w-full h-full flex items-center flex-col">
@@ -46,13 +51,11 @@ function App() {
                 </div>
                 <div className="relative flex justify-center items-center w-10/12 h-8 bg-brown-brown  font-body top-10 rounded">
                     <h1 className="mx-2 text-white">Title:</h1>
-                    <input className="w-9/12 focus:outline-none rounded" type="text" />
-                    <button className="mx-2 text-white w-20 p-0.5 focus:outline-none bg-brown-white rounded-2xl text-sm" type="button">Search</button>
+                    <input className="w-9/12 focus:outline-none rounded" type="text" onChange={updateNameTitle}/>
+                    <button className="mx-2 text-white w-20 p-0.5 focus:outline-none bg-brown-white rounded-2xl text-sm" type="button" onClick={() => getServer(nameTitle)}>Search</button>
                 </div>
-                <div className="relative w-9/12 h-[450px] top-14">
-                    <div className="">
-
-                    </div>
+                <div className="relative w-9/12 h-[450px] top-14 flex justify-center">
+                    {arrayLength()}
                 </div>
             </div>
         </div>
