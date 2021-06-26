@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-      'header-image': "url('/src/img/background.jpg')",
+      'header-image': "url('/src/Img/background.jpg')",
      })},
      colors: {
       transparent: 'transparent',
