@@ -6,7 +6,7 @@ export const Item = ({ data }) => {
     const { thumbnail: img } = data.volumeInfo.imageLinks || "";
 
     return (
-        <div className="flex w-full h-[200px] items-center justify-center text-center bg-brown-brown text-white rounded mb-[30px] text-sm">
+        <div className="flex w-full h-[200px] items-center justify-center text-center bg-brown-brown text-white rounded mb-[30px] text-sm max-w-card">
             <img className="rounded-sm m-[5px]" src={img} alt="" />
             <div className="flex-col m-[5px]">
                 <h3>{title}</h3>

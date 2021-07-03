@@ -37,7 +37,7 @@ function App() {
                 )
               }
               </Carousel>
-            : <div className="w-full h-8 text-center text-white bg-brown-white rounded">
+            : <div className="w-full h-8 text-center text-white bg-brown-white rounded max-w-card">
                 <h3 className="mt-1">Sin resultados de busqueda</h3>
               </div>
         }
@@ -51,16 +51,16 @@ function App() {
   return (
     <div className="w-full h-screen">
       <div className="bg-header-image bg-no-repeat bg-center bg-cover w-full h-full flex items-center flex-col">
-        <div className="relative w-full h-14 top-7 bg-opacity-75 bg-brown-brown font-body">
-          <h1 className="relative text-white text-center text-xl top-1">Book's Store</h1>
-          <h2 className="relative text-white text-center text-base">Bookstore and Publishing House</h2>
-          <div className="absolute bg-white w-7 h-1 top-7"></div>
-          <div className="absolute bg-white w-7 h-1 top-7 right-0"></div>
+        <div className="relative w-full h-14 top-7 bg-opacity-75 bg-brown-brown font-body md:h-16">
+          <h1 className="relative text-white text-center text-xl top-1 md:text-3xl">Book's Store</h1>
+          <h2 className="relative text-white text-center text-base md:text-xl">Bookstore and Publishing House</h2>
+          <div className="absolute bg-white w-7 h-1 top-7 md:top-8"></div>
+          <div className="absolute bg-white w-7 h-1 top-7 right-0 md:top-8"></div>
         </div>
-        <div className="relative flex justify-center items-center w-10/12 h-8 bg-brown-brown  font-body top-10 rounded">
-          <h1 className="mx-2 text-white">Title:</h1>
-          <input className="w-9/12 focus:outline-none rounded" type="text" onChange={updateNameTitle} />
-          <button className="mx-2 text-white w-20 p-0.5 focus:outline-none bg-brown-white rounded-2xl text-sm" type="button" onClick={() => getServer(nameTitle)}>Search</button>
+        <div className="relative flex justify-center items-center w-10/12 h-8 bg-brown-brown font-body top-10 rounded max-w-md md:h-10 ">
+          <h1 className="mx-2 text-white md:text-2xl">Title:</h1>
+          <input className="w-9/12 focus:outline-none rounded md:h-8 md:text-2xl" type="text" onChange={updateNameTitle} />
+          <button className="mx-2 text-white w-20 p-0.5 focus:outline-none bg-brown-white rounded-2xl text-sm md:text-xl md:w-24" type="button" onClick={() => getServer(nameTitle)}>Search</button>
         </div>
         <div className="relative w-9/12 h-[450px] top-14 flex justify-center">
           {arrayLength()}

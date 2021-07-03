@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-      'header-image': "url('/src/Img/background.jpg')",
+      'header-image': "url('/src/img/background.jpg')",
      })},
      colors: {
       transparent: 'transparent',
@@ -26,7 +26,15 @@ module.exports = {
      },
      fontFamily: {
        body: ['Ruluko']
-     }
+     },
+     maxWidth: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+      'card': '300px',
+     },
   },
   variants: {
     extend: {},
